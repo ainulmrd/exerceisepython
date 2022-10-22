@@ -47,7 +47,7 @@ st.write("Accuracy score:", a)
 from sklearn.metrics import classification_report
 
 b = classification_report(ytest, y_model)
-st.write(b)
+st.write("Classification report:",b)
 
 # Confusion Matrix
 from sklearn.metrics import confusion_matrix 
@@ -60,12 +60,12 @@ import numpy as np
 confusion_matrix = metrics.confusion_matrix(ytest, y_model)
 
 c = confusion_matrix
-st.write(c)
+st.write("Confusion matrix:",c)
 
 cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix,display_labels=np.unique(y_mc))
 
 cm_display.plot()
-plt.show()
+st.pyplot(fig)
 
 from sklearn.metrics import classification_report
 d = classification_report(ytest, y_model)
