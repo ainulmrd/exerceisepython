@@ -3,6 +3,13 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+
+st.header("My first Streamlit App")
+st.write(pd.DataFrame({
+    'Intplan': ['yes', 'yes', 'yes', 'no'],
+    'Churn Status': [0, 0, 0, 1]
+}))
+
 mc = pd.read_csv('/content/mall_customer.csv')
 
 mc.head()
