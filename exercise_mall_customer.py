@@ -50,7 +50,7 @@ confusion_matrix = metrics.confusion_matrix(ytest, y_model)
 c = confusion_matrix
 st.write("Confusion matrix:",c)
 fig = plt.figure(figsize=(10, 4))
-sns.heatmap(data=mall_customer)
+sns.heatmap(c, annot=True)
 st.pyplot(fig)
 
 from sklearn.metrics import classification_report
