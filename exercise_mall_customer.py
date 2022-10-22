@@ -1,5 +1,7 @@
-import seaborn as sns
+import streamlit as st
+import numpy as np
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
 mc = pd.read_csv('/content/mall_customer.csv')
 
