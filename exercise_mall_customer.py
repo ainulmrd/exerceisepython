@@ -42,7 +42,7 @@ y_model = model.predict(Xtest)
 
 from sklearn.metrics import accuracy_score
 a = accuracy_score(ytest, y_model) #accuracy is low
-st.write(a)
+st.write("Accuracy score:", a)
 
 from sklearn.metrics import classification_report
 
