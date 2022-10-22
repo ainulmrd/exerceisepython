@@ -49,12 +49,7 @@ import numpy as np
 confusion_matrix = metrics.confusion_matrix(ytest, y_model)
 c = confusion_matrix
 st.write("Confusion matrix:",c)
-
-def plot_metrics(metrics_list):
-    if "Confusion Matrix" in metrics_list:
-        st.subheader("Confusion Matrix")
-        plot_confusion_matrix(model, ytest, y_model, display_labels=   class_names)
-        st.pyplot()
+st.pyplot(c)
 
 from sklearn.metrics import classification_report
 d = classification_report(ytest, y_model)
