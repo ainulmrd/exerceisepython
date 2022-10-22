@@ -48,7 +48,7 @@ from sklearn import metrics
 import numpy as np
 confusion_matrix = metrics.confusion_matrix(ytest, y_model)
 c = confusion_matrix
-st.subheader("Confusion matrix:",c)
+st.write("Confusion matrix:",c)
 fig = plt.figure(figsize=(10, 4))
 sns.heatmap(c, annot=True)
 st.pyplot(fig)
