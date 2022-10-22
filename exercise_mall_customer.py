@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import sklearn as sk
+from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 
 st.header("Machine Learning for Mall Customer Data")
@@ -49,11 +50,8 @@ confusion_matrix = metrics.confusion_matrix(ytest, y_model)
 c = confusion_matrix
 st.write("Confusion matrix:",c)
 
-cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix,display_labels=np.unique(y_mc))
-fig = plt.figure(figsize=(10, 4))
-cm_display.plot()
-st.pyplot(fig)
-
+plot_confusion_matrix(confusion_matrix, display_labels=class_names)
+st.pyplot()
 
 from sklearn.metrics import classification_report
 d = classification_report(ytest, y_model)
