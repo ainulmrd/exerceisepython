@@ -50,7 +50,7 @@ confusion_matrix = metrics.confusion_matrix(ytest, y_model)
 c = confusion_matrix
 st.write("Confusion matrix:",c)
 
-plot_confusion_matrix(confusion_matrix, display_labels=class_names)
+plot_confusion_matrix(model, ytest, y_model, display_labels=np.unique(y_mc))
 st.pyplot()
 
 from sklearn.metrics import classification_report
