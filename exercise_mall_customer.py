@@ -36,7 +36,7 @@ st.write("Accuracy score:", a)
 
 from sklearn.metrics import classification_report
 b = classification_report(ytest, y_model)
-b.columns = ["Precision", "Recall", "F1-Score")
+b.columns = ["Precision", "Recall", "F1-Score"]
 st.write("Classification report:",b)
 
 # Confusion Matrix
