@@ -11,7 +11,7 @@ st.write(pd.DataFrame({
     'Churn Status': [0, 0, 0, 1]
 }))
 
-mc = pd.read_csv('/content/mall_customer.csv')
+mc = pd.read_csv('mall_customer.csv')
 
 mc.head()
 
