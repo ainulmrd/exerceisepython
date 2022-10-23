@@ -10,7 +10,7 @@ y_iris = iris['species']
 xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris, random_state = 0)
 
 clf = SVC(kernel='rbf', C=1).fit(xtrain, ytrain)
-# st.write('Iris dataset')
+st.write('Iris dataset')
 st.write('Accuracy of RBF SVC classifier on training set: {:.2f}'
      .format(clf.score(xtrain, ytrain)))
 st.write('Accuracy of RBF SVC classifier on test set: {:.2f}'
@@ -27,9 +27,10 @@ svm = svm.fit(xtrain, ytrain)
 
 # Evaluate by means of a confusion matrix
 matrix = plot_confusion_matrix(svm, xtest, ytest, cmap=plt.cm.Blues, normalize='true')
+fig = plt.figure()
 plt.title('Confusion matrix for linear SVM')
 plt.show(matrix)
-plt.show()
+st.pyplot(fig)
 
 from sklearn.linear_model import LogisticRegression 
 model = LogisticRegression()                      
