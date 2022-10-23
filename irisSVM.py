@@ -41,4 +41,4 @@ model.fit(xtrain, ytrain)
 y_model = model.predict(xtest)
 
 cr = classification_report(ytest, y_model)
-print(cr)
+st.write(cr)
