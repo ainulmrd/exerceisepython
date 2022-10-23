@@ -37,7 +37,7 @@ cr = classification_report(ytest, y_model)
 st.write(cr)
 
 from sklearn.metrics import confusion_matrix 
-#confusion_matrix(ytest, y_model)
+confusion_matrix(ytest, y_model)
 
 #svm = SVC(random_state=42, kernel='linear')
 
