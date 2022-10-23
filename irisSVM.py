@@ -22,6 +22,15 @@ X_iris.shape
 
 y_iris.shape
 
+from sklearn.metrics import classification_report
+from sklearn.svm import SVC
+model = SVC()                       
+model.fit(xtrain, ytrain)                  
+y_model = model.predict(xtest)
+
+cr = classification_report(ytest, y_model)
+st.write(cr)
+
 svm = SVC(random_state=42, kernel='linear')
 
 # Fit the data to the SVM classifier
@@ -33,12 +42,3 @@ fig = plt.figure()
 plt.title('Confusion matrix for linear SVM')
 plt.show(matrix)
 st.pyplot(fig)
-
-from sklearn.metrics import classification_report
-from sklearn.svm import SVC
-model = SVC()                       
-model.fit(xtrain, ytrain)                  
-y_model = model.predict(xtest)
-
-cr = classification_report(ytest, y_model)
-st.write(cr)
