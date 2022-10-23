@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 
-iris = pd.read_csv('/content/iris.csv')
+iris = pd.read_csv('iris.csv')
 X_iris = iris.drop('species', axis=1)  
 y_iris = iris['species']
 xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris, random_state = 0)
