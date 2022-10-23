@@ -33,11 +33,11 @@ plt.title('Confusion matrix for linear SVM')
 plt.show(matrix)
 st.pyplot(fig)
 
-from sklearn.linear_model import LogisticRegression 
-model = LogisticRegression()                      
-model.fit(xtrain, ytrain)                  
-y_model = model.predict(xtest)  
-
 from sklearn.metrics import classification_report
+from sklearn.svm import SVC
+model = SVC()                       
+model.fit(xtrain, ytrain)                  
+y_model = model.predict(xtest)
+
 cr = classification_report(ytest, y_model)
-st.write(cr)
+print(cr)
