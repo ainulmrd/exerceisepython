@@ -1,3 +1,4 @@
+import streamlit as st
 from sklearn import tree
 from sklearn.tree import plot_tree
 import pandas as pd
