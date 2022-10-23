@@ -2,11 +2,12 @@ import pandas as pd
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import plot_confusion_matrix
-from sklearn.svm import SVC
+import seaborn as sns
 
-iris = pd.read_csv('iris.csv')
+iris = sns.load_dataset('iris') 
 X_iris = iris.drop('species', axis=1)  
 y_iris = iris['species']
+
 xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris, random_state = 0)
 
 clf = SVC(kernel='rbf', C=1).fit(xtrain, ytrain)
