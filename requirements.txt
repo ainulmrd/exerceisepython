@@ -5,3 +5,5 @@ sklearn
 seaborn
 matplotlib
 sklearn
+graphviz
+dtreeviz
