@@ -12,8 +12,10 @@ xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=1)
 classf = tree.DecisionTreeClassifier()
 classf = classf.fit(xtrain, ytrain)
 
-classf.fit(xtrain, ytrain)
+st.write(classf.fit(xtrain, ytrain))
 
+fig = plt.figure(figsize=(10, 4))
 tree.plot_tree(classf.fit(xtrain, ytrain))
+st.pyplot(fig)
 
-classf.score(xtest, ytest)
+st.write(classf.score(xtest, ytest))
