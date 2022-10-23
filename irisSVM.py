@@ -4,6 +4,7 @@ from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import plot_confusion_matrix
 import seaborn as sns
+from sklearn.metrics import classification_report
 
 iris = sns.load_dataset('iris') 
 X_iris = iris.drop('species', axis=1)  
@@ -22,14 +23,19 @@ X_iris.shape
 
 y_iris.shape
 
-from sklearn.metrics import classification_report
-from sklearn.svm import SVC
 model = SVC()                       
 model.fit(xtrain, ytrain)                  
 y_model = model.predict(xtest)
 
+from sklearn.metrics import accuracy_score
+a = accuracy_score(ytest, y_model) 
+st.write("Accuracy score:", a)
+
 cr = classification_report(ytest, y_model)
 st.write(cr)
+
+from sklearn.metrics import confusion_matrix 
+confusion_matrix(ytest, y_model)
 
 svm = SVC(random_state=42, kernel='linear')
 
