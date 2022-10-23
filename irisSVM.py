@@ -36,9 +36,6 @@ st.write("Accuracy score:", a)
 cr = classification_report(ytest, y_model)
 st.write(cr)
 
-from sklearn.metrics import confusion_matrix 
-confusion_matrix(ytest, y_model)
-
 #svm = SVC(random_state=42, kernel='linear')
 
 # Fit the data to the SVM classifier
@@ -46,11 +43,19 @@ confusion_matrix(ytest, y_model)
 
 # Evaluate by means of a confusion matrix
 # matrix = plot_confusion_matrix(svm, xtest, ytest, cmap=plt.cm.Blues, normalize='true')
+
+from sklearn.metrics import confusion_matrix 
+confusion_matrix(ytest, y_model)
+
+#Confusion Matrix
+from sklearn import metrics
+import numpy as np
 confusion_matrix = metrics.confusion_matrix(ytest, y_model)
-cm = confusion_matrix
-st.write("Confusion matrix:",cm)
+c = confusion_matrix
+st.write("Confusion matrix:",c)
 fig = plt.figure(figsize=(10, 4))
-sns.heatmap(cm, annot=True)
+sns.heatmap(c, annot=True)
 st.pyplot(fig)
+
 
 
