@@ -5,6 +5,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import plot_confusion_matrix
 import seaborn as sns
 from sklearn.metrics import classification_report
+import matplotlib.pyplot as plt
+import numpy as np
 
 iris = sns.load_dataset('iris') 
 X_iris = iris.drop('species', axis=1)  
@@ -43,8 +45,12 @@ svm = SVC(random_state=42, kernel='linear')
 svm = svm.fit(xtrain, ytrain)
 
 # Evaluate by means of a confusion matrix
-matrix = plot_confusion_matrix(svm, xtest, ytest, cmap=plt.cm.Blues, normalize='true')
-fig = plt.figure()
-plt.title('Confusion matrix for linear SVM')
-plt.show(matrix)
+# matrix = plot_confusion_matrix(svm, xtest, ytest, cmap=plt.cm.Blues, normalize='true')
+confusion_matrix = metrics.confusion_matrix(ytest, y_model)
+cm = confusion_matrix
+st.write("Confusion matrix:",cm)
+fig = plt.figure(figsize=(10, 4))
+sns.heatmap(cm, annot=True)
 st.pyplot(fig)
+
+
