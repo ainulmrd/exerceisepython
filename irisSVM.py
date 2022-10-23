@@ -1,6 +1,8 @@
 import pandas as pd
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import plot_confusion_matrix
+from sklearn.svm import SVC
 
 iris = pd.read_csv('iris.csv')
 X_iris = iris.drop('species', axis=1)  
@@ -18,10 +20,22 @@ X_iris.shape
 
 y_iris.shape
 
-from sklearn.naive_bayes import GaussianNB 
-model = GaussianNB()                     
-model.fit(xtrain, ytrain)               
-ymodel = model.predict(xtest) 
+svm = SVC(random_state=42, kernel='linear')
+
+# Fit the data to the SVM classifier
+svm = svm.fit(xtrain, ytrain)
+
+# Evaluate by means of a confusion matrix
+matrix = plot_confusion_matrix(svm, xtest, ytest, cmap=plt.cm.Blues, normalize='true')
+plt.title('Confusion matrix for linear SVM')
+plt.show(matrix)
+plt.show()
+
+from sklearn.linear_model import LogisticRegression 
+model = LogisticRegression()                      
+model.fit(xtrain, ytrain)                  
+y_model = model.predict(xtest)  
 
 from sklearn.metrics import classification_report
-st.write(classification_report(ytest, ymodel)) 
+cr = classification_report(ytest, y_model)
+st.write(cr)
