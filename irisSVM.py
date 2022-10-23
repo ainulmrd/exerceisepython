@@ -37,12 +37,12 @@ cr = classification_report(ytest, y_model)
 st.write(cr)
 
 from sklearn.metrics import confusion_matrix 
-confusion_matrix(ytest, y_model)
+#confusion_matrix(ytest, y_model)
 
-svm = SVC(random_state=42, kernel='linear')
+#svm = SVC(random_state=42, kernel='linear')
 
 # Fit the data to the SVM classifier
-svm = svm.fit(xtrain, ytrain)
+#svm = svm.fit(xtrain, ytrain)
 
 # Evaluate by means of a confusion matrix
 # matrix = plot_confusion_matrix(svm, xtest, ytest, cmap=plt.cm.Blues, normalize='true')
