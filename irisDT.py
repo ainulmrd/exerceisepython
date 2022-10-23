@@ -15,7 +15,7 @@ clsf = classf.fit(xtrain, ytrain)
 
 st.write(clsf)
 
-fig = plt.figure(figsize=(10, 4))
+# fig = plt.figure(figsize=(10, 4))
 tree.plot_tree(classf.fit(xtrain, ytrain))
 st.pyplot(fig)
 
