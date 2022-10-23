@@ -11,9 +11,9 @@ y_iris = iris['species']
 
 xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=1)
 classf = tree.DecisionTreeClassifier()
-classf = classf.fit(xtrain, ytrain)
+clsf = classf.fit(xtrain, ytrain)
 
-st.write(classf.fit(xtrain, ytrain))
+st.write(clsf)
 
 fig = plt.figure(figsize=(10, 4))
 tree.plot_tree(classf.fit(xtrain, ytrain))
