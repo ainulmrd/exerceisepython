@@ -12,7 +12,7 @@ iris = sns.load_dataset('iris')
 X_iris = iris.drop('species', axis=1)  
 y_iris = iris['species']
 
-xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=1)
+xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=0)
 classf = tree.DecisionTreeClassifier()
 clsf = classf.fit(xtrain, ytrain)
 viz= dtreeviz(clsf, X_iris, y_iris, target_name="species", feature_names=["f0", "f1"], class_names=["c0", "c1"])
