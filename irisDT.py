@@ -15,8 +15,8 @@ y_iris = iris['species']
 xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=1)
 classf = tree.DecisionTreeClassifier()
 clsf = classf.fit(xtrain, ytrain)
-viz= dtreeviz(clsf, X_iris, y_iris, target_name="Classes", feature_names=["f0", "f1"], class_names=["c0", "c1"])
-st.graphviz_chart(viz)
+# viz= dtreeviz(clsf, X_iris, y_iris, target_name="Classes", feature_names=["f0", "f1"], class_names=["c0", "c1"])
+st.graphviz_chart(clsf)
 
 # st.write(clsf)
 
