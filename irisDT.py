@@ -14,18 +14,7 @@ y_iris = iris['species']
 
 xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=0)
 classf = tree.DecisionTreeClassifier()
-clsf = classf.fit(xtrain, ytrain)
-viz= dtreeviz(clsf, X_iris, y_iris, target_name="species", feature_names=["f0", "f1"], class_names=["c0", "c1"])
+clsf = classf.fit(xtrain.data, ytrain.data)
+viz = dtreeviz(classf, xtrain.data, ytrain.target, target_name='species', feature_names = species.feature_names, class_names=["setosa", "versiolor","virginica"])
 st.graphviz_chart(viz)
-
-# st.write(clsf)
-
-# fig = plt.figure(figsize=(10, 4))
-# tree.plot_tree(classf.fit(xtrain, ytrain))
-# st.pyplot(fig)
-
-st.write(classf.score(xtest, ytest))
-
-
-# ------
-
+# viz.view() 
