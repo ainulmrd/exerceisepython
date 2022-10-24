@@ -1,10 +1,13 @@
-import streamlit as st
-import pandas as pd
 from sklearn.svm import SVC
+from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import plot_confusion_matrix
-import seaborn as sns
 from sklearn.metrics import classification_report
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix 
+import seaborn as sns
+import streamlit as st
+import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -29,19 +32,15 @@ model = SVC()
 model.fit(xtrain, ytrain)                  
 y_model = model.predict(xtest)
 
-from sklearn.metrics import accuracy_score
 a = accuracy_score(ytest, y_model) 
 st.write("Accuracy score:", a)
 
 cr = classification_report(ytest, y_model)
 st.write(cr)
 
-from sklearn.metrics import confusion_matrix 
 confusion_matrix(ytest, y_model)
 
 #Confusion Matrix
-from sklearn import metrics
-import numpy as np
 confusion_matrix = metrics.confusion_matrix(ytest, y_model)
 c = confusion_matrix
 st.write("Confusion matrix:",c)
