@@ -32,8 +32,7 @@ a = accuracy_score(ytest, y_model)
 st.write("Accuracy score:", a)
 
 cr = classification_report(ytest, y_model)
-st.write("Classification report:")
-st.dataframe(cr, 100, 200)
+st.table("Classification report:", cr)
 
 confusion_matrix(ytest, y_model)
 
