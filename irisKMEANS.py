@@ -7,6 +7,7 @@ file = "iris.csv"
 
 iris = pd.read_csv(file)
 
+st.write("KMeans Clustering for Iris Dataset")
 iris.head()
 
 features = ['sepal_length', 'sepal_width']
