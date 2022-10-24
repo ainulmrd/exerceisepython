@@ -13,7 +13,7 @@ features = ['sepal_length', 'sepal_width']
 iris_sepal = iris[features]
 
 iris_sepal
-fig = plt.figure(figsize=(10, 4))
+fig = plt.figure(figsize=(8, 4))
 plt.scatter(iris_sepal['sepal_length'], iris_sepal['sepal_width'], c = "brown");
 st.pyplot(fig)
 
@@ -22,8 +22,9 @@ features = ['petal_length', 'petal_width']
 iris_petal = iris[features]
 
 iris_petal
-
+fig = plt.figure(figsize=(8, 4))
 plt.scatter(iris_petal['petal_length'], iris_petal['petal_width'], c = "pink");
+st.pyplot(fig)
 
 from sklearn.cluster import KMeans
 kmeans = KMeans(n_clusters=4)
