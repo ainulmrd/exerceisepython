@@ -24,7 +24,7 @@ iris_petal = iris[features]
 
 iris_petal
 fig = plt.figure(figsize=(8, 4))
-plt.scatter(iris_petal['petal_length'], iris_petal['petal_width'], c = "pink");
+plt.scatter(iris_petal['petal_length'], iris_petal['petal_width'], c = "salmon");
 st.pyplot(fig)
 
 from sklearn.cluster import KMeans
