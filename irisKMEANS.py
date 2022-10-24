@@ -13,8 +13,10 @@ features = ['sepal_length', 'sepal_width']
 iris_sepal = iris[features]
 
 iris_sepal
+fig = plt.figure(figsize=(10, 4))
+sns.scatter(iris_sepal['sepal_length'], iris_sepal['sepal_width'], c = "brown");
+st.pyplot(fig)
 
-plt.scatter(iris_sepal['sepal_length'], iris_sepal['sepal_width'], c = "brown");
 
 features = ['petal_length', 'petal_width']
 iris_petal = iris[features]
