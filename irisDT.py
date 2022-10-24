@@ -18,8 +18,8 @@ xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=1)
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(xtrain, ytrain)
 
-
-fig = plt.figure(figsize=(10, 4))
+st.write("Decision Tree for Iris Dataset")
+fig = plt.figure(figsize=(14, 8))
 clf.fit(xtrain, ytrain) 
 tree.plot_tree(clf.fit(xtrain, ytrain) )
 st.pyplot(fig)
