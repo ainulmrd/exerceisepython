@@ -39,9 +39,13 @@ plt.scatter(iris_sepal['sepal_length'], iris_sepal['sepal_width'], c=y1_kmeans, 
 st.pyplot(fig)
 
 centers1 = kmeans.cluster_centers_
+st.write("Cluster Center (Sepal)")
 centers1
 
+fig = plt.figure(figsize=(8, 4))
 plt.scatter(iris_petal['petal_length'], iris_petal['petal_width'], c=y2_kmeans, s=50, cmap='inferno')
+st.pyplot(fig)
 
 centers2 = kmeans.cluster_centers_
+st.write("Cluster Center (Petal)")
 centers2
