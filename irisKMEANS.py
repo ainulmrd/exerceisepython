@@ -2,6 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from sklearn.cluster import KMeans
 
 file = "iris.csv"
 
@@ -27,14 +28,15 @@ fig = plt.figure(figsize=(8, 4))
 plt.scatter(iris_petal['petal_length'], iris_petal['petal_width'], c = "salmon");
 st.pyplot(fig)
 
-from sklearn.cluster import KMeans
 kmeans = KMeans(n_clusters=4)
 sepal = kmeans.fit(iris_sepal)
 y1_kmeans = kmeans.predict(iris_sepal)
 petal = kmeans.fit(iris_petal)
 y2_kmeans = kmeans.predict(iris_petal)
 
+fig = plt.figure(figsize=(8, 4))
 plt.scatter(iris_sepal['sepal_length'], iris_sepal['sepal_width'], c=y1_kmeans, s=50, cmap='PRGn')
+st.pyplot(fig)
 
 centers1 = kmeans.cluster_centers_
 centers1
