@@ -9,7 +9,7 @@ file = "mall_customer.csv"
 mc = pd.read_csv(file)
 
 st.header("KMeans Clustering for Iris Dataset")
-mc.head()
+mc
 
 features = ['Annual_Income_(k$)', 'Spending_Score']
 mcF = mc[features]
