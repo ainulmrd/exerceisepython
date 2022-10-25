@@ -9,7 +9,9 @@ from sklearn import tree
 from sklearn.tree import plot_tree
 from sklearn.model_selection import train_test_split
 
+st.header("Decision Tree for Iris Dataset")
 iris = sns.load_dataset('iris')
+iris
 
 X_iris = iris.drop('species', axis=1)  
 y_iris = iris['species']
@@ -18,7 +20,6 @@ xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=1)
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(xtrain, ytrain)
 
-st.write("Decision Tree for Iris Dataset")
 fig = plt.figure(figsize=(14, 8))
 clf.fit(xtrain, ytrain) 
 tree.plot_tree(clf.fit(xtrain, ytrain) )
